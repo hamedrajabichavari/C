@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+
+int main()
+{
+    int a=9;
+    
+    //pointer
+    int * a_pointer;
+    a_pointer = &a;
+    
+    printf("the value of a is : %d\n",a);
+    printf("the value of pointer is : %d\n",*a_pointer);
+    
+return 0;
+}
