@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+    struct student{
+    int id;
+    char *name[20];
+    float gpa;
+    int term;
+};
+
+int main(){
+    struct student students[3];
+    
+    for(int i=0;i<3;i+=1){
+        
+    puts("give me the student id : ");
+    scanf("%d",&students[i].id);
+    puts("give me the student name : ");
+    scanf("%s",&students[i].name);
+    puts("give me the student gpa : ");
+    scanf("%f",&students[i].gpa);
+    puts("give me the student term : ");
+    scanf("%d",&students[i].term);
+    }
+    
+    for(int i=0;i<3;i+=1){
+        
+    puts("-----");
+    printf("student id : %d \n" , students[i].id);
+    printf("student name : %s \n" , students[i].name);
+    printf("student gpa : %.1f \n" , students[i].gpa);
+    printf("student term : %d \n" , students[i].term);
+   
+    }
+   
+    
+    
+    
+    
+    return 0;
+    
+}
