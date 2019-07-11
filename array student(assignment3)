@@ -46,7 +46,7 @@ int main()
                     j=i;
                 }
             }
-            if(j==10)
+            if(j==1000)
                 printf("Invalid student number.\n\n");
             
         }
