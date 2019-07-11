@@ -6,14 +6,19 @@ int main()
     
     puts("when is your birth day:");
     scanf("%d", &bDay);
+    
     printf("when is your birth month:");
     scanf("%d", &bMonth);
+    
     printf("when is your birth year:");
     scanf("%d", &bYear);
+    
     printf("today's day:");
     scanf("%d", &tDay);
+    
     printf("today's month:");
     scanf("%d", &tMonth);
+    
     printf("today's year:");
     scanf("%d", &tYear);
     
@@ -21,14 +26,14 @@ int main()
     mDif = tMonth - bMonth;
     yDif = tYear - bYear;
     
-    if (mDif < 0)
-    {
+    if (mDif < 0){
+        
         mDif += 12;
         yDif -= 1;
     }
     
-    if (dDif < 0)
-    {
+    if (dDif < 0){
+        
         dDif += 30;
         mDif -= 1;
     }
