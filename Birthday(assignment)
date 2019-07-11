@@ -1,0 +1,40 @@
+#include <stdio.h>
+int main()
+{
+    int bDay, bMonth, bYear, tDay, tMonth, tYear, dDif, mDif, yDif;
+    
+    
+    puts("when is your birth day:");
+    scanf("%d", &bDay);
+    printf("when is your birth month:");
+    scanf("%d", &bMonth);
+    printf("when is your birth year:");
+    scanf("%d", &bYear);
+    printf("today's day:");
+    scanf("%d", &tDay);
+    printf("today's month:");
+    scanf("%d", &tMonth);
+    printf("today's year:");
+    scanf("%d", &tYear);
+    
+    dDif = tDay - bDay;
+    mDif = tMonth - bMonth;
+    yDif = tYear - bYear;
+    
+    if (mDif < 0)
+    {
+        mDif += 12;
+        yDif -= 1;
+    }
+    
+    if (dDif < 0)
+    {
+        dDif += 30;
+        mDif -= 1;
+    }
+    
+    printf("Exact age is %d years, %d months and %d days.", yDif, mDif, dDif);
+    
+    
+    return 0;
+}
