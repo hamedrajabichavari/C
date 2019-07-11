@@ -1,45 +1,63 @@
 #include <stdio.h>
-int main()
-{
-    int bDay, bMonth, bYear, tDay, tMonth, tYear, dDif, mDif, yDif;
-    
-    
-    puts("when is your birth day:");
-    scanf("%d", &bDay);
-    
-    printf("when is your birth month:");
-    scanf("%d", &bMonth);
-    
-    printf("when is your birth year:");
-    scanf("%d", &bYear);
-    
-    printf("today's day:");
-    scanf("%d", &tDay);
-    
-    printf("today's month:");
-    scanf("%d", &tMonth);
-    
-    printf("today's year:");
-    scanf("%d", &tYear);
-    
-    dDif = tDay - bDay;
-    mDif = tMonth - bMonth;
-    yDif = tYear - bYear;
-    
-    if (mDif < 0){
+    int main()
+    {
+        int bDay, bMonth, bYear, tDay, tMonth, tYear, dDif, mDif, yDif;
         
-        mDif += 12;
-        yDif -= 1;
-    }
-    
-    if (dDif < 0){
+        //when is your birthdate
+        puts("when is your birth day:");
+        scanf("%d", &bDay);
         
-        dDif += 30;
-        mDif -= 1;
+        printf("when is your birth month:");
+        scanf("%d", &bMonth);
+        
+        printf("when is your birth year:");
+        scanf("%d", &bYear);
+        
+        //Today's date
+        
+        printf("today's day:");
+        scanf("%d", &tDay);
+        
+        printf("today's month:");
+        scanf("%d", &tMonth);
+        
+        printf("today's year:");
+        scanf("%d", &tYear);
+        
+        //Difference of dates
+        
+        dDif = tDay - bDay;
+        mDif = tMonth - bMonth;
+        yDif = tYear - bYear;
+        
+        //a year = 12 month
+        
+        if (mDif < 0){
+            
+            mDif = mDif + 12;
+            yDif = yDif - 1;
+        }
+        
+        //a month = 30 days
+        
+        if (dDif < 0){
+            
+            dDif = dDif + 30;
+            mDif = mDif - 1;
+        }
+        
+        printf("your exact age is %d years, %d months and %d days.", yDif, mDif, dDif);
+        
+        if (yDif>60){
+            puts("Ohhhh you are too old!");
+        }
+        
+        
+        if (yDif<18){
+            puts("you are too young :) ");
+        }
+        
+        
+        
+        return 0;
     }
-    
-    printf("Exact age is %d years, %d months and %d days.", yDif, mDif, dDif);
-    
-    
-    return 0;
-}
