@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    int x, y, z, sum, product, min, max;
+    float average;
+    
+    printf( "hey , enter three different numbers \n");
+    
+    printf( "enter your first number: ");
+    scanf( "%d", &x);
+    
+    printf( "enter your second number: ");
+    scanf( "%d", &y);
+    
+    printf( "enter your third number: ");
+    scanf( "%d", &z);
+    
+    sum = x + y + z;
+    printf("Sum is %d\n", sum );
+    
+    average = (float)(x + y + z ) / 3;
+    printf("Average is %.2f \n", average );
+    
+    product = x * y * z;
+    printf("Product is %d\n", product );
+    
+    if(x < y){
+        min = x;
+        max = y;
+    }else{
+        min = y;
+        max = x;
+    }
+    
+    if( min > z){
+        min = z;
+    }
+    if ( max < z){
+        max = z;
+    }
+    
+    printf("smallest number is: %d\n",min );
+    printf("largest number is: %d\n",max );
+
+    return 0;
+}
