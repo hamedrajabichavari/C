@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main ()
+
+{
+    float miles,gasCost,mpg,parkFee,tolls,total;
+    
+    
+    puts("enter the total miles driven per day: " );
+    scanf( "%f", &miles );
+    
+    
+    puts("enter the cost per gallon of gasoline: " );
+    scanf( "%f", &gasCost );
+    
+   
+    puts("enter average miles per gallon: " );
+    scanf( "%f", &mpg );
+    
+   
+    puts("enter the parking fees per day: " );
+    scanf( "%f", &parkFee );
+    
+    
+    puts("enter the tolls per day: " );
+    scanf( "%f", &tolls );
+    
+    
+    total = tolls + parkFee + ( miles / mpg ) * gasCost;
+    
+    printf( "daily cost is : $%.2f\n", total );
+    
+    return 0;
+}
