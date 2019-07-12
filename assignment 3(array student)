@@ -1,0 +1,97 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int studentNumber[10];
+    int count;
+    for (count=1; count<11; count+=1)
+    {
+        printf("enter student number %d (3-digits):\n",count);
+        scanf("%d",&studentNumber[count-1]);
+        
+        if(studentNumber[count-1]>1000){
+           printf("enter the correct student number %d (3-digits!!!):\n",count);
+            scanf("%d",&studentNumber[count-1]);
+        }
+        if(studentNumber[count-1]< 1){
+            printf("enter the correct student number %d (3-digits!!!):\n",count);
+            scanf("%d",&studentNumber[count-1]);
+        }
+    }
+    
+    printf("Student\t\tStudent Number\n");
+    for (count=1;count<11; count+=1)
+    {
+        printf("%d\t\t%d\n",count,studentNumber[count-1]);
+    }
+    
+    
+    int studentMark[10][6];
+   
+    
+    count=1;
+    int stnumber;
+    
+    
+    
+    do
+    {
+        float score;
+        int i,j;
+        j=1000;
+        while (j==1000)
+            
+        {
+            
+            printf("enter the student number (3-digits) whom you want to know the final mark: \n\n");
+            scanf("%d",&stnumber);
+            
+            for (i=0; i<10;i+=1)
+            {
+                if(stnumber==studentNumber[i])
+                {
+                    j=i;
+                }
+            }
+            if(j==1000)
+                printf("Invalid student number.\n\n");
+            
+        }
+        
+        printf("Please enter the student attendance (0 - 100):\n\n");
+        scanf("%d",&studentMark[j][0]);
+        printf("Please enter the student quiz_1 (0 - 100):\n\n");
+        scanf("%d",&studentMark[j][1]);
+        printf("Please enter the student quiz_2 (0 - 100):\n\n");
+        scanf("%d",&studentMark[j][2]);
+        printf("Please enter the student midterm (0 - 100):\n\n");
+        scanf("%d",&studentMark[j][3]);
+        printf("Please enter the student final (0 - 100):\n\n");
+        scanf("%d",&studentMark[j][4]);
+        
+        score=(0.1*studentMark[j][0]+0.1*studentMark[j][1]+0.1*studentMark[j][2]+0.3*studentMark[j][3]+0.4*studentMark[j][4]);
+        studentMark[j][5]=(int) score;
+        
+        printf("Student: %d \n" ,j+1);
+        printf("Student Number: %d \n" ,studentNumber[j]);
+        printf("Student attendance: %d \n" ,studentMark[j][0]);
+        printf("Student quiz 1: %d \n" ,studentMark[j][1]);
+        printf("Student quiz 2: %d \n" ,studentMark[j][2]);
+        printf("Student midterm: %d \n" ,studentMark[j][3]);
+        printf("Student final: %d \n" ,studentMark[j][4]);
+        printf("Student final mark: %d \n" ,studentMark[j][5]);
+        
+       
+        
+        
+        
+        
+        
+        count+=1;
+    }while(count<11);
+    
+    
+    
+    return 0;
+}
