@@ -1,0 +1,83 @@
+#include <stdio.h>
+
+struct employee{
+    
+    char *name[20];
+    char *lastname[20];
+    int type;
+    double salary;
+    
+    
+};
+
+int main(){
+    int piece , a;
+    float sale , hour;
+   
+    struct employee employees[2];
+    
+    for(int i=0;i<2;i+=1){
+        
+        puts("give me the employee name : ");
+        scanf("%s",&employees[i].name);
+        puts("give me the employee lastname : ");
+        scanf("%s",&employees[i].lastname);
+        puts("give me the employee type : (1-full time 2-commision based 3-piece worker 4-hourly worker 5-contract)");
+        scanf("%d",&employees[i].type);
+        
+        int a = employees[i].type;
+        
+        if(a==1){
+            employees[i].salary = 800;
+        }
+        
+        if(a==2){
+            puts("give me the employee sale : ");
+            scanf("%f",&sale);
+            employees[i].salary = 0.3 * sale;
+        }
+        
+        if(a==3){
+            puts("give me the employee piece : ");
+            scanf("%d",&piece);
+            employees[i].salary = 10 * piece;
+        }
+        
+        if(a==4){
+            puts("give me the employee hour : ");
+            scanf("%f",&hour);
+            if( hour > 40 ){
+            employees[i].salary = 40 * 20 + (hour - 40) * 30;
+            }
+            
+            if( hour <= 40 ){
+                employees[i].salary = hour * 20;
+            }
+        }
+        
+        if(a==5){
+            employees[i].salary = 3000;
+        }
+        
+        
+    }
+    
+    
+    for(int i=0;i<2;i+=1){
+        
+        
+        puts("-----");
+        printf("employee name : %s \n" , employees[i].name);
+        printf("employee lastname : %s \n" , employees[i].lastname);
+        printf("employee type : %d \n" , employees[i].type);
+        printf("employee salary : %.2f \n" , employees[i].salary);
+        
+    }
+    
+    
+    
+    
+    
+    return 0;
+    
+}
