@@ -70,7 +70,7 @@ int main(){
         printf("employee name : %s \n" , employees[i].name);
         printf("employee lastname : %s \n" , employees[i].lastname);
         printf("employee type : %d \n" , employees[i].type);
-        printf("employee salary : %.2f \n" , employees[i].salary);
+        printf("employee salary : %.2f $\n" , employees[i].salary);
         
     }
     
