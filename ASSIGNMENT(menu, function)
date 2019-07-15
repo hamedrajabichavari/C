@@ -1,0 +1,155 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void circlefunction(){
+    
+    float radius;
+puts("enter radius of the circle:");
+scanf("%f", &radius);
+
+printf("diameter = %.2f \n", 2 * radius);
+printf("circumference = %.2f \n", 2 * 3.14159 * radius);
+printf("area = %.2f \n", 3.14159 * (radius * radius));
+}
+int main() {
+    
+    int a;
+    
+    int x, y, z, sum, product, min, max;
+    float average;
+    float miles,gasCost,mpg,parkFee,tolls,total;
+    
+    do {
+        printf("****MENU****\n");
+        printf("1 - three different numbers\n");
+        printf("2 - circle\n");
+        printf("3 - min & max\n");
+        printf("4 - carpool \n");
+        printf("0 - to exit\n");
+        
+        scanf("%d", &a);
+        
+        switch (a)
+        {
+            case 1:
+               
+                printf( "hey , enter three different numbers \n");
+                
+                printf( "enter your first number: ");
+                scanf( "%d", &x);
+                
+                printf( "enter your second number: ");
+                scanf( "%d", &y);
+                
+                printf( "enter your third number: ");
+                scanf( "%d", &z);
+                
+                sum = x + y + z;
+                printf("Sum is %d\n", sum );
+                
+                average = (float)(x + y + z ) / 3;
+                printf("Average is %.2f \n", average );
+                
+                product = x * y * z;
+                printf("Product is %d\n", product );
+                
+                if(x < y){
+                    min = x;
+                    max = y;
+                }else{
+                    min = y;
+                    max = x;
+                }
+                
+                if( min > z){
+                    min = z;
+                }
+                if ( max < z){
+                    max = z;
+                }
+                
+                printf("smallest number is: %d\n",min );
+                printf("largest number is: %d\n",max );
+                break;
+                
+            case 2:
+                
+                circlefunction();
+                break;
+                
+            case 3:
+                
+               
+                
+                
+                printf( "hey , enter three different numbers \n");
+                
+                printf( "enter your first number: ");
+                scanf( "%d", &x);
+                
+                printf( "enter your second number: ");
+                scanf( "%d", &y);
+                
+                printf( "enter your third number: ");
+                scanf( "%d", &z);
+                
+                if(x < y){
+                    min = x;
+                    max = y;
+                }else{
+                    min = y;
+                    max = x;
+                }
+                
+                if( min > z){
+                    min = z;
+                }
+                if ( max < z){
+                    max = z;
+                }
+                
+                printf("smallest number is: %d\n",min );
+                printf("largest number is: %d\n",max );
+                break;
+                
+                
+            case 4:
+                
+                
+                
+                puts("enter the total miles driven per day: " );
+                scanf( "%f", &miles );
+                
+                
+                puts("enter the cost per gallon of gasoline: " );
+                scanf( "%f", &gasCost );
+                
+                
+                puts("enter average miles per gallon: " );
+                scanf( "%f", &mpg );
+                
+                
+                puts("enter the parking fees per day: " );
+                scanf( "%f", &parkFee );
+                
+                
+                puts("enter the tolls per day: " );
+                scanf( "%f", &tolls );
+                
+                
+                total = tolls + parkFee + ( miles / mpg ) * gasCost;
+                
+                printf( "daily cost is : $%.2f\n", total );
+                break;
+                
+                
+            case 0:
+                break;
+            default:
+                printf("hey its not in the menu, try one more time!\n");
+                break;
+        }
+    } while (a != 0);
+    
+    return 0;
+}
