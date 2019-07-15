@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+   
+    int userInput;
+   
+    
+         puts("give me the size of integers");
+         scanf("%d",&userInput);
+         
+         
+         //find me a space in RAM
+         //which is the size of the users data
+         int * iPtr;
+         iPtr = (int *)malloc(sizeof(int)*userInput);
+         //iPtr = (int *)calloc(userInput,sizeof(int));
+    
+    
+    
+     for(int i=0; i<userInput; i+=1){
+         printf("give me the number %d\n",i);
+         scanf("%d",iPtr);
+     printf("the location of %d is %p the value are %d\n",i , iPtr , *iPtr);
+         iPtr+=1;
+     }
+    iPtr -= userInput;
+    printf("your first value is: %d\n ",*iPtr );
+   
+    return 0;
+}
