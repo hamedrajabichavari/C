@@ -19,25 +19,25 @@ typedef struct student{
 } stdnt;
 
 int main() {
-
+    
     stdnt student1;
     int studentNumber;
     puts("how many students do you want to create?");
     scanf("%d",&studentNumber);
     
     stdnt *studentPtr =(stdnt *)malloc(sizeof(stdnt)*studentNumber);
-
+    
     
     for (int i = 0; i<studentNumber; i+=1) {
         
-        printf("give me student %d name", i);
+        printf("give me student %d name\n", i);
         scanf("%s",studentPtr->name);
         //scanf("%s",&student1.name);
         
-        printf("give me student %d birth year", i);
+        printf("give me student %d birth year\n", i);
         scanf("%d", &(studentPtr->bYear));
         
-        printf("give me student %d gpa", i);
+        printf("give me student %d gpa\n", i);
         scanf("%lf", &(studentPtr->gpa));
         
         studentPtr += 1;
@@ -48,10 +48,10 @@ int main() {
     
     for (int i = 0; i<studentNumber; i+=1) {
         
-        printf("student %d name : %s", i, studentPtr->name);
-        printf("student %d bYear : %d", i, studentPtr->bYear);
-        printf("student %d gpa : %.1f", i, studentPtr->gpa);
-
+        printf("student %d name : %s\n", i, studentPtr->name);
+        printf("student %d bYear : %d\n", i, studentPtr->bYear);
+        printf("student %d gpa : %.1f\n", i, studentPtr->gpa);
+        
         studentPtr += 1;
         
     }
