@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+//data structure
+
+//linked list struct
+
+typedef struct Node Nodeptr;
+
+typedef struct Node {
+    
+    int data;
+    Nodeptr * next;
+    Nodeptr * prev;
+    
+} Nodeptr;
+
+Nodeptr * start;
+Nodeptr * end;
+    
+
+int main() {
+    
+    
+    //allocate space in RAM
+    Nodeptr * Node1 = (Nodeptr *)malloc(sizeof(Nodeptr));
+    
+    
+    start = Node1;
+    end = Node1;
+    
+    //initialize the Node data
+    Node1->data = 100;
+    Node1->next = NULL;
+    Node1->prev = NULL;
+    
+    Nodeptr * Node2 = (Nodeptr *)malloc(sizeof(Nodeptr));
+    
+    
+    end = Node2;
+    
+    Node2->data = 200;
+    Node2->next = NULL;
+    Node2->prev = Node1;
+    Node1->next = Node2;
+    
+    Nodeptr * Node3 = (Nodeptr *)malloc(sizeof(Nodeptr));
+    
+    end = Node3;
+    
+    Node3->data = 300;
+    Node3->next = NULL;
+    Node3->prev = Node2;
+    Node2->next = Node3;
+    
+ 
+    return 0;
+}
