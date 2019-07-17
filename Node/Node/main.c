@@ -41,7 +41,6 @@ int main(int argc, char *argv[])
                 menu();
                 break;
             case 1:
-                puts("under construction");
                 addToLeft();
                 break;
             case 2:
@@ -57,7 +56,7 @@ int main(int argc, char *argv[])
                 addMiddleBefore();
                 break;
             case 5:
-                puts("under construction");
+                
                 printTheNodes();
                 break;
             case 6:

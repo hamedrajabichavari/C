@@ -21,15 +21,48 @@ Nodeptr * start;
 Nodeptr * endNode;
 
 void printTheNodes() {
-    
+    if(start == NULL && endNode == NULL){
+        puts("no code no print");
+    }else {
+        Nodeptr * currentPtr = start;
+        
+        while(currentPtr != NULL){
+            printf("%d",currentPtr->data);
+            printf("-->");
+            currentPtr = currentPtr->next;
+        }
+        printf("NULL\n");
+        puts("------");
+        
+        puts("");
+    }
 }
-
+    
 void printTheNodesBackwards() {
-    
+  
 }
-
 void addToLeft() {
+
+    Nodeptr * currentNode= (Nodeptr *)malloc(sizeof(Nodeptr));
     
+    if(start==NULL && endNode == NULL){
+         //this is a first node
+        start = currentNode;
+        endNode = currentNode;
+        printf("what's the data?");
+        scanf("%d",&currentNode->data);
+        currentNode->previous = NULL;
+        currentNode->next = NULL;
+        
+    } else{
+        printf("what's the new data?");
+        scanf("%d",&currentNode->data);
+        currentNode->previous = NULL;
+        currentNode->next = start;
+        start->previous = currentNode;
+        start = currentNode;
+        printTheNodes();
+    }
 }
 
 void addToRight(){
@@ -37,6 +70,7 @@ void addToRight(){
     Nodeptr * currentNode = (Nodeptr *)malloc(sizeof(Nodeptr));
     
     if(start == NULL && endNode == NULL){
+        //this is a first node
         start = currentNode;
         endNode = currentNode;
         printf("what is the data?");
@@ -44,8 +78,17 @@ void addToRight(){
         currentNode->next = NULL;
         currentNode->previous = NULL;
     }else {
+        
+       //get new data from user
+        
         puts("add one more node");
-        //code here ...
+        scanf("%d",&currentNode->data);
+        currentNode->next = NULL;
+        currentNode->previous = endNode;
+        endNode->next = currentNode;
+        endNode = currentNode;
+        printTheNodes();
+        
     }
     
 }
